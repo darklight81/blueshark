@@ -21,13 +21,11 @@
 ### Prerequisites
 
 * php 
-* php-pgsql (I'll be using postgres, but it's up to you)
+* php-pgsql (I am using postgres, but you can use your preferable database)
 * composer
 * symfony
 
 ### Installation
-
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
 1. Clone the repository
    ```sh
@@ -38,7 +36,7 @@ _Below is an example of how you can instruct your audience on installing and set
    composer install
    ```
 3. Set up your database in ```.env``` file, more information [here](https://symfony.com/doc/current/doctrine.html)
-4. Create a database
+4. Create the database
     ```sh 
     php bin/console doctrine:database:create
     php bin/console make:migration
