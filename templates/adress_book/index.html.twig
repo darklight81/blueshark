@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact List{% endblock %}
+
+{% block body %}
+    {% if contacts| length > 0 %}
+        <a href="/create">Add contact</a>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th> Note </th>
+                <th> Edit </th>
+                <th> Delete </th>
+            </tr>
+            {% for i in 0..contacts|length-1 %}
+                <tr>
+                    <td>{{ contacts[i].name }}</td>
+                    <td>{{ contacts[i].surname }}</td>
+                    <td>{{ contacts[i].phone }}</td>
+                    <td>{{ contacts[i].email }}</td>
+                    <td>{{ contacts[i].note }}</td>
+                    <td>  <a href="{{contacts[i].name}}+{{contacts[i].surname}}">Edit </a> </td>
+                    <td>  <a href="/delete/{{ contacts[i].id }}"> Delete </a> </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endblock %}
